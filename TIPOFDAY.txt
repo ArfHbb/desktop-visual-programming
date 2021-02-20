@@ -1,0 +1,7 @@
+Kelebihan member yaitu pelanggan tidak perlu memperlihatkan kartu identitas setiap transaksi
+Batas pengembalian tiap VCD/DVD yaitu 7 hari
+Sebelum dan sesudah melakukan transaksi kondisi VCD/DVD akan dicek
+ID Film ditulis di setiap VCD/DVD
+Apabila pelanggan melakukan keterlambatan, maka denda untuk tiap CD adalah Rp.1000
+Harga sewa untuk CVD adalah Rp.3000,- sedangkan untuk DVD yaitu Rp.5.000,-
+Pelanggan akan dianggap non-aktif apabila tidak melakukan peminjaman selama 3 bulan berturut-turut.

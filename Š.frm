@@ -1,0 +1,75 @@
+VERSION 5.00
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
+Begin VB.Form frmSplash 
+   BackColor       =   &H00FFFF00&
+   BorderStyle     =   3  'Fixed Dialog
+   ClientHeight    =   4080
+   ClientLeft      =   255
+   ClientTop       =   1410
+   ClientWidth     =   7815
+   ClipControls    =   0   'False
+   ControlBox      =   0   'False
+   Icon            =   "Š.frx":0000
+   KeyPreview      =   -1  'True
+   LinkTopic       =   "Form2"
+   MaxButton       =   0   'False
+   MinButton       =   0   'False
+   Picture         =   "Š.frx":000C
+   ScaleHeight     =   4080
+   ScaleWidth      =   7815
+   ShowInTaskbar   =   0   'False
+   StartUpPosition =   2  'CenterScreen
+   Begin MSComctlLib.ProgressBar ProgressBar1 
+      Height          =   375
+      Left            =   960
+      TabIndex        =   0
+      Top             =   3240
+      Width           =   6015
+      _ExtentX        =   10610
+      _ExtentY        =   661
+      _Version        =   393216
+      Appearance      =   0
+   End
+   Begin VB.Timer Timer1 
+      Interval        =   25
+      Left            =   0
+      Top             =   0
+   End
+   Begin VB.Shape Shape1 
+      BorderColor     =   &H8000000E&
+      Height          =   615
+      Left            =   840
+      Top             =   3120
+      Width           =   6255
+   End
+End
+Attribute VB_Name = "frmSplash"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+Dim efek As Integer
+
+Private Sub Frame1_DragDrop(Source As Control, X As Single, Y As Single)
+End Sub
+
+Private Sub Timer1_Timer()
+On Error Resume Next
+efek = efek + 5
+ProgressBar1.Value = ProgressBar1.Value + 400 / 400
+If efek > 500 Then
+    Timer1.Enabled = False
+    Screen.MousePointer = vbNormal
+    Me.WindowState = 0
+    Do
+    Me.Left = Me.Left + 40
+    Me.Move Me.Left, Me.Top
+    DoEvents
+    Loop Until Me.Left > Screen.Width
+    Load Form1
+    Form1.Show
+    Unload Me
+End If
+End Sub
+
